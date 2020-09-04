@@ -1,0 +1,99 @@
+<div class="container" *ngIf="!loading">
+    <mat-card class="animal-card">
+
+        <div class="container-btn-new">
+            <button mat-stroked-button (click)="backPage()">
+                <mat-icon>reply</mat-icon>&nbsp; Back
+            </button>
+        </div>
+
+        <mat-card-content>
+            <mat-card-title>{{ animal.name | titlecase }}</mat-card-title>
+            <p class="content" *ngIf="animal.description">{{ animal.description }}</p>
+            <p class="content" *ngIf="!animal.description">Hi! I am a beautiful pet, I love humans, I love playing, and I love getting belly rubs. I'll admit, I need a little training and patience, but it's nothing good exercise and stable home can't fix!</p>
+        </mat-card-content>
+
+        <mat-grid-list cols="2" rowHeight="1:1">
+            <mat-grid-tile>
+                <div *ngIf="animal.photos?.length">
+                    <img matCardImage [src]="animal.photos[0].large">
+                </div>
+                <div *ngIf="!animal.photos?.length">
+                    <img matCardImage [src]="photoComingSoon">
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-list>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <strong>ID:&nbsp;&nbsp;</strong>
+                        {{ animal.id }}
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <strong>Organization ID:&nbsp;&nbsp;</strong>
+                        {{ animal.organization_id }}
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <strong>Type:&nbsp;&nbsp;</strong>
+                        {{ animal.type }}
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <strong>Species:&nbsp;&nbsp;</strong>
+                        {{ animal.species }}
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item *ngIf="animal.breeds">
+                        <strong>Breeds:&nbsp;&nbsp;</strong>
+                        {{ animal.breeds.primary }}
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <strong>Age:&nbsp;&nbsp;</strong>
+                        {{ animal.age }}
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <strong>Gender:&nbsp;&nbsp;</strong>
+                        {{ animal.gender }}
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <strong>Size:&nbsp;&nbsp;</strong>
+                        {{ animal.size }}</mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <strong>Status:&nbsp;&nbsp;</strong>
+                        {{ animal.status }}</mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item *ngIf="animal.contact">
+                        <strong>Email:&nbsp;&nbsp;</strong>
+                        {{ animal.contact.email }}
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item *ngIf="animal.contact">
+                        <strong>Phone:&nbsp;&nbsp;</strong>
+                        {{ animal.contact.phone }}
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item *ngIf="animal.contact">
+                        <strong>Address:&nbsp;&nbsp;</strong>
+                        {{ animal.contact.address.address1 }}
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item *ngIf="animal.contact">
+                        <strong>City:&nbsp;&nbsp;</strong>
+                        {{ animal.contact.address.city }}
+                    </mat-list-item>
+                </mat-list>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+    </mat-card>
+</div>
+
+<div class="container-spinner" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+</div>

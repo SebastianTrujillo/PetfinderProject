@@ -1,0 +1,25 @@
+<mat-card-header>
+    <mat-card-title>
+        <a [routerLink]="['/animal', animal.id]">{{ animal.name | titlecase }}</a>
+    </mat-card-title>
+</mat-card-header>
+
+<div *ngIf="animal.photos?.length">
+    <img matCardImage [src]="animal.photos[0].large">
+</div>
+<div *ngIf="!animal.photos?.length">
+    <img matCardImage [src]="photoComingSoon">
+</div>
+
+<mat-card-content *ngIf="animal.description">
+    <p class="content">{{ animal.description }}</p>
+</mat-card-content>
+<mat-card-content *ngIf="!animal.description">
+    <p class="content">Hi! I am a beautiful pet, I love humans, I love playing, and I love getting belly rubs. I'll admit, I need a little training and patience, but it's nothing good exercise and stable home can't fix!</p>
+</mat-card-content>
+
+<mat-card-actions>
+    <mat-chip-list>
+        <mat-chip>{{ animal.breeds.primary }}</mat-chip>
+    </mat-chip-list>
+</mat-card-actions>

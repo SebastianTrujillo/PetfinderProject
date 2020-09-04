@@ -1,0 +1,61 @@
+@import "src/scss/variables";
+@import "src/scss/helpers";
+
+.mat-card {
+    background: $default_white;
+    color: $default_black;
+    width: 80%;
+    margin: 1% auto;
+    padding: 2%;
+    border-radius: 0;
+    box-shadow: initial;
+
+    .mat-card-title {
+        font-size: 2rem;
+        padding-top: 10px;
+        padding-bottom: 8px;
+    }
+
+    .mat-card-content {
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+        padding-bottom: 30px;
+
+        p.content {
+            text-align: center;
+            font-size: 18px;
+        }
+    }
+
+    .mat-list {
+        width: 100%;
+    }
+
+    img {
+        height: 616px;
+        border-radius: 6px;
+        display: block;
+        margin: auto;
+    }
+}
+
+.align-center {
+    text-align: center;
+    clear: both;
+    display: block;
+    margin: 6px auto;
+}
+
+.container-btn-new {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 1rem -0.6rem;
+    button {
+        width: 10%;
+        color: $default_white;
+        background: $button_purpure;
+        cursor: pointer;
+    }
+}

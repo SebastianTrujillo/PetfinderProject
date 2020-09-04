@@ -1,0 +1,21 @@
+@import "src/scss/variables";
+
+a {
+    cursor: pointer;
+    color: $default_white;
+    text-decoration: none;
+}
+
+img {
+    height: 300px;
+}
+
+p.content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mat-card-title {
+    padding-bottom: 20px;
+}

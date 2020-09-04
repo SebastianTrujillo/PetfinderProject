@@ -1,0 +1,7 @@
+{
+    "/v2/*" : {
+        "target" : "https://api.petfinder.com",
+        "secure" : false,
+        "changeOrigin" : true
+    }
+}
